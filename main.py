@@ -2,13 +2,13 @@ import serial.tools.list_ports
 import os
 
 nome = input("Digite o nome do arquivo: ").strip('\n').strip('.txt').strip() + '.txt'
-baud = 9600
+baud = 115200
 
 while os.path.exists(nome):
     inp = input(f"O arquivo '{nome}' já existe. Deseja sobrescrever? (s/n): ").strip().lower()
     if inp in ['n','nao', 'nn','0']:
         nome = input("Digite o nome do arquivo: ").strip('\n').strip('txt') + '.txt'
-    elif inp in ['s','sim','1']:
+    else:
         break
 
 print()
